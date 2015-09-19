@@ -8,6 +8,9 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +34,11 @@ public class StoreApplicationRestfulImpl  implements StoreApplicationRestful{
 	
 	@GET
 	@Path("/getStore")
-	//@Produces("application/json")
+	@Produces(MediaType.APPLICATION_XML)
 	public Response getStore(){
-		//List<Store> result = storeService.getStore();
 		List<Store> stores = storeApplicationService.getStore();
-		return Response.status(200).entity(stores).build();
+		GenericEntity<List<Store>> storeList = new GenericEntity<List<Store>>(stores){};
+		return Response.status(200).entity(storeList).build();
 	}
 
 }
