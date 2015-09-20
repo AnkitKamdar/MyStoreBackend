@@ -6,7 +6,9 @@ package com.sm.backend.restful.store.impl;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.GenericEntity;
@@ -40,6 +42,15 @@ public class StoreApplicationRestfulImpl  implements StoreApplicationRestful{
 		List<StoreDto> stores = storeApplicationService.getStore();
 		GenericEntity<List<StoreDto>> storeList = new GenericEntity<List<StoreDto>>(stores){};
 		return Response.status(200).entity(storeList).build();
+	}
+	
+	@POST
+    @Path("/createStore")
+	@Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_JSON)
+	public Response createStore(final StoreDto _store) {
+		String response = storeApplicationService.createStore(_store);
+    	return Response.status(200).entity(response).build();
 	}
 
 }

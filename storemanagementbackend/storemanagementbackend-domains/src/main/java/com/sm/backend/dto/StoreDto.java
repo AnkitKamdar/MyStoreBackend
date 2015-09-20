@@ -25,6 +25,11 @@ public class StoreDto implements Serializable{
 	private String storeLocality;
 	private String storeCity;
 	private String storeMobNo;
+	private String ownerName;
+	private String emailAddress;
+	private String storePincode;
+	private String serviceArea;
+	
 	/**
 	 * @return the storeId
 	 */
@@ -108,6 +113,59 @@ public class StoreDto implements Serializable{
 	 */
 	public void setStoreMobNo(String storeMobNo) {
 		this.storeMobNo = storeMobNo;
+	}
+	
+	/**
+	 * @return the ownerName
+	 */
+	public String getOwnerName() {
+		return ownerName;
+	}
+	
+	/**
+	 * set the store ownerName
+	 * @param ownerName
+	 */
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+	
+	/**
+	 * @return the emailAddress
+	 */
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	/**
+	 * set the emailAddress
+	 * @param emailAddress
+	 */
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	/**
+	 * @return store pincode
+	 */
+	public String getStorePincode() {
+		return storePincode;
+	}
+	/**set the store pincode
+	 * @param storePincode
+	 */
+	public void setStorePincode(String storePincode) {
+		this.storePincode = storePincode;
+	}
+	/**
+	 * @return store service area
+	 */
+	public String getServiceArea() {
+		return serviceArea;
+	}
+	/**set the store service area
+	 * @param serviceArea
+	 */
+	public void setServiceArea(String serviceArea) {
+		this.serviceArea = serviceArea;
 	}
 		
 

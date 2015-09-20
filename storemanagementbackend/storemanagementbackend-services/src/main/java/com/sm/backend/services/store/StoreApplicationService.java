@@ -15,8 +15,17 @@ import com.sm.backend.dto.StoreDto;
 public interface StoreApplicationService {
 	
 	/**
-	 * This method is used to get the stores .
+	 * This method is used to get the stores
+	 * @return List<StoreDto>
 	 */
-	public List<StoreDto> getStore();
+	List<StoreDto> getStore();
+	
+	
+	/**
+	 * This method is user to create a store
+	 * @param _store
+	 * @return String
+	 */
+	String createStore(final StoreDto _store);
 
 }

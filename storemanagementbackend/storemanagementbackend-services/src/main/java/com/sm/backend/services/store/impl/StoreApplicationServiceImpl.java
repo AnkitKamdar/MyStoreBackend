@@ -36,4 +36,12 @@ public class StoreApplicationServiceImpl implements StoreApplicationService{
 		return storeLst;
 	}
 
+	public String createStore(StoreDto _store) {
+		Store store = StoreAssembler.getStore(_store);
+		String response = storeApplicationIntegration.createStore(store);
+		return response;
+	}
+	
+	
+
 }

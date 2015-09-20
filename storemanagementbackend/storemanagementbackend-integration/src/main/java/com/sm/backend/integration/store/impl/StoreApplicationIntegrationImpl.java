@@ -5,6 +5,8 @@ package com.sm.backend.integration.store.impl;
 
 import java.util.List;
 
+import javax.ws.rs.core.MediaType;
+
 import org.springframework.stereotype.Component;
 
 import com.sm.backend.integration.common.ApplicationIntegration;
@@ -39,5 +41,16 @@ public class StoreApplicationIntegrationImpl extends ApplicationIntegration impl
 			  }
 			return storeList;
 	}
-   
+
+	public String createStore(Store _store) {
+		ClientResponse response = getResource()
+				.path("store").path("createStore").type(MediaType.APPLICATION_XML).post(ClientResponse.class, _store);
+		if(response.getStatus() !=200){
+			throw new RuntimeException("Failed : HTTP error code : "
+				     + response.getStatus());
+		}
+		String output = response.getEntity(String.class);
+		System.out.println(output);
+		return "success";
+	}
 }
