@@ -16,6 +16,7 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.sm.backend.dto.StoreDto;
 import com.sm.backend.restful.store.StoreApplicationRestful;
 import com.sm.backend.services.store.StoreApplicationService;
 import com.sm.svc.domains.Store;
@@ -36,8 +37,8 @@ public class StoreApplicationRestfulImpl  implements StoreApplicationRestful{
 	@Path("/getStore")
 	@Produces(MediaType.APPLICATION_XML)
 	public Response getStore(){
-		List<Store> stores = storeApplicationService.getStore();
-		GenericEntity<List<Store>> storeList = new GenericEntity<List<Store>>(stores){};
+		List<StoreDto> stores = storeApplicationService.getStore();
+		GenericEntity<List<StoreDto>> storeList = new GenericEntity<List<StoreDto>>(stores){};
 		return Response.status(200).entity(storeList).build();
 	}
 

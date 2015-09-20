@@ -24,6 +24,10 @@
 		   <groupId>com.sm.svc</groupId>
 		   <artifactId>storemangement-domains</artifactId>
 	  </dependency>	    
+	  <dependency>
+		    <groupId>com.sm.backend</groupId>
+		    <artifactId>storemanagementbackend-domains</artifactId>
+	</dependency>	    
 	  
   </dependencies>
 </project>
